@@ -795,12 +795,12 @@
                     <artifactId>arquillian-suite-extension</artifactId>
                     <scope>${my.project.dependency.test.scope}</scope>
                 </dependency>
-	            <!-- arquillian-suite-extension requires this -->
-	            <dependency>
-	                <groupId>commons-lang</groupId>
-	                <artifactId>commons-lang</artifactId>
+                <!-- arquillian-suite-extension requires this -->
+                <dependency>
+                    <groupId>commons-lang</groupId>
+                    <artifactId>commons-lang</artifactId>
                     <scope>${my.project.dependency.test.scope}</scope>
-	            </dependency>
+                </dependency>
             </dependencies>
         </profile>
         <profile>
@@ -972,5 +972,6 @@
     </profiles>
     <modules>
         <module>payara-evaluation-base</module>
+        <module>payara-evaluation-openapi</module>
     </modules>
 </project>

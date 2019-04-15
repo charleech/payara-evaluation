@@ -1,4 +1,4 @@
-package app.github.charleech.base.bean;
+package app.github.charleech.openapi.bean;
 
 import java.io.Serializable;
 import java.util.Map;
@@ -42,7 +42,7 @@ import lombok.ToString;
     "PMD.UnusedPrivateField",
     "PMD.SingularField"
 })
-public class MySimpleDataBean extends MyDataBeanBase {
+public class MyLocalDataBean extends MyLocalDataBeanBase {
 
     /**
      * This is a default serial version {@code UID} as {@value}.

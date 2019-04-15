@@ -8,6 +8,7 @@ import javax.ws.rs.core.Response;
 
 import org.assertj.core.api.Assertions;
 import org.assertj.core.api.BDDAssertions;
+import org.assertj.core.groups.Tuple;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.junit.InSequence;
 import org.jboss.arquillian.test.api.ArquillianResource;
@@ -29,7 +30,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * <p>
  * This is a concrete implementing class which provides the feature for testing
- * the {@code JAX-RS base feature}
+ * the {@code JAX-RS base feature}.
  * </p>
  *
  * @author charlee.ch
@@ -95,6 +96,23 @@ public class MyResourceIntgrtnTester {
                           as("The message must be valid.").
                           isEqualTo("Hello unknown");
 
+            BDDAssertions.then(simple.getAttributes()).
+                          as("The attributes must be valid.").
+                          isNotNull().
+                          isNotEmpty();
+
+            BDDAssertions.then(simple.getAttributes().entrySet()).
+                          as("The attributes must be valid.").
+                          extracting(
+                              e -> e.getKey(),
+                              e -> e.getValue()
+                          ).
+                          containsExactly(
+                              Tuple.tuple("key-a", "value-a"),
+                              Tuple.tuple("key-n", "value-n"),
+                              Tuple.tuple("key-z", "value-z")
+                          );
+
         } finally {
             client = null;
             simple = null;
@@ -121,6 +139,22 @@ public class MyResourceIntgrtnTester {
                           as("The message must be valid.").
                           isEqualTo("Hello Payara");
 
+            BDDAssertions.then(simple.getAttributes()).
+                          as("The attributes must be valid.").
+                          isNotNull().
+                          isNotEmpty();
+
+            BDDAssertions.then(simple.getAttributes().entrySet()).
+                          as("The attributes must be valid.").
+                          extracting(
+                              e -> e.getKey(),
+                              e -> e.getValue()
+                          ).
+                          containsExactly(
+                              Tuple.tuple("key-a", "value-a"),
+                              Tuple.tuple("key-n", "value-n"),
+                              Tuple.tuple("key-z", "value-z")
+                          );
         } finally {
             client = null;
             simple = null;
@@ -168,9 +202,9 @@ public class MyResourceIntgrtnTester {
             BDDJsonAssertions.then(JsonPath.builder(js)).
                               as("The message must be valid.").
                               field("message").
-                              isEqualTo("This is a failure.");
-
-
+                              isEqualTo("This is a failure.").
+                              field("attributes").
+                              isEmpty();
         } finally {
             ex = null;
             we = null;
