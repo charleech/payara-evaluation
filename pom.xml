@@ -795,6 +795,12 @@
                     <artifactId>arquillian-suite-extension</artifactId>
                     <scope>${my.project.dependency.test.scope}</scope>
                 </dependency>
+	            <!-- arquillian-suite-extension requires this -->
+	            <dependency>
+	                <groupId>commons-lang</groupId>
+	                <artifactId>commons-lang</artifactId>
+                    <scope>${my.project.dependency.test.scope}</scope>
+	            </dependency>
             </dependencies>
         </profile>
         <profile>
@@ -806,7 +812,7 @@
                 </property>
             </activation>
             <properties>
-                <my.payara.location>${project.build.directory}/payara-micro</my.payara.location>
+                <my.payara.location>${project.build.directory}</my.payara.location>
             </properties>
             <build>
                 <plugins>
@@ -855,16 +861,6 @@
                         <inherited>true</inherited>
                         <configuration>
                             <argLine>${my.maven.surefire.jvm.memory} ${my.maven.surefire.java.endorsed.dir}</argLine>
-                            <environmentVariables>
-                                <MICRO_JAR>${my.payara.location}/payara-micro-${my.payara.version}.jar</MICRO_JAR>
-                                <MICRO_CMD_OPTIONS>
-                                    -Dlogback.configurationFile=src/test/resources/logback-test.xml
-                                </MICRO_CMD_OPTIONS>
-                                <EXTRA_MICRO_OPTIONS>
-                                    --addLibs target/libs
-                                    --logproperties src/test/resources/logging.properties
-                                </EXTRA_MICRO_OPTIONS>
-                            </environmentVariables>
                         </configuration>
                     </plugin>
                 </plugins>

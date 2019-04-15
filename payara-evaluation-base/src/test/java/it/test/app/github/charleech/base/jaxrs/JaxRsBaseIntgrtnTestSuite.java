@@ -1,4 +1,4 @@
-package test.app.github.charleech.base.bean;
+package it.test.app.github.charleech.base.jaxrs;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -16,8 +16,8 @@ import org.junit.runners.Suite.SuiteClasses;
  */
 @RunWith(Suite.class)
 @SuiteClasses({
-    DataBeanTester.class
+    MyResourceIntgrtnTester.class
 })
-public class DataBeanTestSuite {
+public class JaxRsBaseIntgrtnTestSuite {
 
 }

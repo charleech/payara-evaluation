@@ -1,7 +1,6 @@
 /**
  * <p>
- * This is a package which provides the integration testing for the
- * {@code base data bean}.
+ * This is a package which provides the feature as a {@code base data bean}.
  * </p>
  *
  * @author charlee.ch
