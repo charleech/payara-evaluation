@@ -7,7 +7,7 @@ import org.junit.contrib.java.lang.system.SystemOutRule;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
-import app.github.charleech.base.bean.MySimpleDataBean;
+import app.github.charleech.base.bean.MyOuterBean;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -21,7 +21,7 @@ import lombok.extern.slf4j.Slf4j;
  * @since 1.0.0
  */
 @Slf4j
-public class DataBeanTester {
+public class OuterDataBeanTester {
 
     /**
      * This is a variable which represents the {@link MockitoRule}.
@@ -47,10 +47,10 @@ public class DataBeanTester {
      */
     @Test
     public void whenReset() {
-        MySimpleDataBean simple = null;
+        MyOuterBean simple = null;
         try {
 
-            simple = new MySimpleDataBean();
+            simple = new MyOuterBean();
             simple.reset();
 
             BDDAssertions.then(simple.getCorrelationId()).
@@ -73,10 +73,10 @@ public class DataBeanTester {
      */
     @Test
     public void whenDoubleReset() {
-        MySimpleDataBean simple = null;
+        MyOuterBean simple = null;
         try {
 
-            simple = new MySimpleDataBean();
+            simple = new MyOuterBean();
             simple.reset();
             simple.reset();
 

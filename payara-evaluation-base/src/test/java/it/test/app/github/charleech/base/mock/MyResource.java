@@ -1,6 +1,8 @@
 package it.test.app.github.charleech.base.mock;
 
 import java.io.Serializable;
+import java.util.Map;
+import java.util.TreeMap;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.Consumes;
@@ -76,6 +78,7 @@ public class MyResource implements Serializable {
             } else {
                 status = Status.OK;
                 simple.setMessage("Hello " + name);
+                simple.setAttributes(this.createAttributes());
             }
 
             return Response.status(status).
@@ -84,6 +87,28 @@ public class MyResource implements Serializable {
         } finally {
             simple = null;
             status = null;
+        }
+    }
+
+    /**
+     * Create attributes.
+     *
+     * @return The attributes
+     * @since 1.0.0
+     */
+    private Map<String, String> createAttributes() {
+        Map<String, String> map = null;
+        try {
+
+            map = new TreeMap<>();
+
+            map.put("key-z", "value-z");
+            map.put("key-n", "value-n");
+            map.put("key-a", "value-a");
+
+            return map;
+        } finally {
+            map = null;
         }
     }
 

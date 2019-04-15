@@ -16,7 +16,8 @@ import org.junit.runners.Suite.SuiteClasses;
  */
 @RunWith(Suite.class)
 @SuiteClasses({
-    DataBeanTester.class
+    DataBeanTester.class,
+    OuterDataBeanTester.class
 })
 public class DataBeanTestSuite {
 

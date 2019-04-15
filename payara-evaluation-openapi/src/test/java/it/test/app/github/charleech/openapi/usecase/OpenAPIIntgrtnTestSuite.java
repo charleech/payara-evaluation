@@ -1,4 +1,4 @@
-package it.test.app.github.charleech.base.jaxrs;
+package it.test.app.github.charleech.openapi.usecase;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -7,7 +7,7 @@ import org.junit.runners.Suite.SuiteClasses;
 /**
  * <p>
  * This is a concrete implementing class which provides the features as a test
- * suite for unit testing the {@code base feature}.
+ * suite for unit testing the customized {@code Microprofile: OpenAPI}.
  * </p>
  *
  * @author charlee.ch
@@ -16,8 +16,8 @@ import org.junit.runners.Suite.SuiteClasses;
  */
 @RunWith(Suite.class)
 @SuiteClasses({
-    MyResourceIntgrtnTester.class
+    MyOpenAPIIntgrtnTester.class
 })
-public class JaxRsBaseIntgrtnTestSuite {
+public class OpenAPIIntgrtnTestSuite {
 
 }

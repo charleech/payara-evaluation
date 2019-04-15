@@ -7,8 +7,6 @@ import java.util.TreeMap;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
-import org.eclipse.microprofile.openapi.annotations.media.Schema;
-
 import app.github.charleech.base.jaxb.MapKeyXmlAdapter;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -25,9 +23,6 @@ import lombok.ToString;
  * @since 1.0.0
  * @see Serializable
  */
-@Schema(
-    title = "This is a simple data bean from jar file."
-)
 @Data
 @EqualsAndHashCode(
     callSuper       = false,
@@ -42,7 +37,7 @@ import lombok.ToString;
     "PMD.UnusedPrivateField",
     "PMD.SingularField"
 })
-public class MySimpleDataBean extends MyDataBeanBase {
+public class MyOuterBean extends MyOuterBeanBase {
 
     /**
      * This is a default serial version {@code UID} as {@value}.
@@ -56,10 +51,6 @@ public class MySimpleDataBean extends MyDataBeanBase {
      *
      * @since 1.0.0
      */
-    @Schema(
-        title    = "The simple message",
-        required = true
-    )
     @XmlElement(name = "message")
     private String message;
 
@@ -68,10 +59,6 @@ public class MySimpleDataBean extends MyDataBeanBase {
      *
      * @since 1.00
      */
-    @Schema(
-        title    = "The simple attributes",
-        required = false
-    )
     @XmlElement(name = "attributes")
     @XmlJavaTypeAdapter(MapKeyXmlAdapter.class)
     private Map<String, String> attributes;
