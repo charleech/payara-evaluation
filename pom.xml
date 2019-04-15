@@ -73,6 +73,14 @@
 
     <inceptionYear>${my.project.inception.year}</inceptionYear>
 
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>central</name>
+            <url>http://repo1.maven.org/maven2/</url>
+        </repository>
+    </repositories>
+
     <licenses>
         <license>
             <name>Apache License 2.0</name>
@@ -966,4 +974,7 @@
             </build>
         </profile>
     </profiles>
+    <modules>
+        <module>payara-evaluation-base</module>
+    </modules>
 </project>
