@@ -1,18 +1,20 @@
-package app.github.charleech.base.bean;
+package app.github.charleech.openapi.bean;
 
 import java.io.Serializable;
-import java.util.UUID;
 
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlTransient;
 
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
+
+import app.github.charleech.base.bean.ref.MyOuterBean;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 /**
  * <p>
- * This is a base class which provides the feature as a based data bean.
+ * This is a concrete implementing class which provides the feature as a simple
+ * data bean.
  * </p>
  *
  * @author charlee.ch
@@ -20,6 +22,9 @@ import lombok.ToString;
  * @since 1.0.0
  * @see Serializable
  */
+@Schema(
+    title = "This is a simple data bean which is extedned from jar file."
+)
 @Data
 @EqualsAndHashCode(
     callSuper       = false,
@@ -34,8 +39,7 @@ import lombok.ToString;
     "PMD.UnusedPrivateField",
     "PMD.SingularField"
 })
-@XmlTransient
-public class MyOuterBeanBase implements Resettable {
+public class MyExtendedOuter extends MyOuterBean {
 
     /**
      * This is a default serial version {@code UID} as {@value}.
@@ -45,17 +49,14 @@ public class MyOuterBeanBase implements Resettable {
     private static final long serialVersionUID = 1L;
 
     /**
-     * This is a variable which represents the correlation id.
+     * This is a variable which represents the simple message.
      *
      * @since 1.0.0
      */
-    @XmlElement(name = "correlationId")
-    private String correlationId;
-
-
-    @Override
-    public void reset() {
-        this.correlationId = UUID.randomUUID().toString();
-    }
-
+    @Schema(
+        title    = "The extended message",
+        required = true
+    )
+    @XmlElement(name = "extendedMessage")
+    private String extendedMessage;
 }

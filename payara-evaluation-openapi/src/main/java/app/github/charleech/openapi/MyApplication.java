@@ -27,8 +27,8 @@ public class MyApplication extends JaxRsApplicationBase {
             classes = new ArrayList<>();
 
             classes.add(MyLocalResource.class);
-            classes.add(MyRefResource.class);
-            classes.add(MyRefOuterResource.class);
+            classes.add(MyAnnotatedResource.class);
+            classes.add(MyOuterResource.class);
 
             return classes;
         } finally {

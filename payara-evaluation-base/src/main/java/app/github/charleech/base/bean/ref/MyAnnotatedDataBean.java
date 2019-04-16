@@ -1,11 +1,12 @@
-package app.github.charleech.base.bean;
+package app.github.charleech.base.bean.ref;
 
 import java.io.Serializable;
 import java.util.Map;
-import java.util.TreeMap;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 import app.github.charleech.base.jaxb.MapKeyXmlAdapter;
 import lombok.Data;
@@ -23,6 +24,9 @@ import lombok.ToString;
  * @since 1.0.0
  * @see Serializable
  */
+@Schema(
+    title = "This is a data bean which is annotated with schema. It is inside jar file."
+)
 @Data
 @EqualsAndHashCode(
     callSuper       = false,
@@ -37,7 +41,7 @@ import lombok.ToString;
     "PMD.UnusedPrivateField",
     "PMD.SingularField"
 })
-public class MyOuterBean extends MyOuterBeanBase {
+public class MyAnnotatedDataBean extends MyAnnotatedSuperBean {
 
     /**
      * This is a default serial version {@code UID} as {@value}.
@@ -51,6 +55,10 @@ public class MyOuterBean extends MyOuterBeanBase {
      *
      * @since 1.0.0
      */
+    @Schema(
+        title    = "The simple message",
+        required = true
+    )
     @XmlElement(name = "message")
     private String message;
 
@@ -59,20 +67,11 @@ public class MyOuterBean extends MyOuterBeanBase {
      *
      * @since 1.00
      */
+    @Schema(
+        title    = "The simple attributes",
+        required = false
+    )
     @XmlElement(name = "attributes")
     @XmlJavaTypeAdapter(MapKeyXmlAdapter.class)
     private Map<String, String> attributes;
-
-    @Override
-    public void reset() {
-        super.reset();
-
-        this.message = null;
-
-        if (this.attributes != null) {
-            this.attributes.clear();
-        }
-        this.attributes = new TreeMap<>();
-    }
-
 }
