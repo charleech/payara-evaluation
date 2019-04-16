@@ -973,5 +973,6 @@
     <modules>
         <module>payara-evaluation-base</module>
         <module>payara-evaluation-openapi</module>
+        <module>payara-evaluation-fault-tolerance</module>
     </modules>
 </project>
