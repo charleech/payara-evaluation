@@ -25,7 +25,7 @@ mvn clean install -Dpayara-micro=true
 
 ```bash
 cd payara-evaluation/payara-evaluation-fault-tolerance
-mvn clean install -Dmaven.test.skip=true
+mvn clean install -Dmaven.test.skip=true -Dpayara-micro=true
 
 #
 # If we wolud like to execute the integration test
