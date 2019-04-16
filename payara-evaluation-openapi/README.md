@@ -253,6 +253,63 @@ app.github.charleech.openapi.bean
 }
 ```
 
+## If we remove the classes that extends the payara-evaluation-base.jar
+
+* `app.github.charleech.openapi.bean.MyExtendedAnnotated`
+
+* `app.github.charleech.openapi.bean.MyExtendedOuter`
+
+The **OpenAPI** will not render the classes from the `payara-evaluation-base.jar`
+
+
+```json
+{
+    "openapi":"3.0.0",
+    "components":{
+        "schemas":{
+            "MyExtendedAnnotated":{
+                "title":"This is a simple data bean which is extedned from jar file.",
+                "properties":{
+                    "extendedMessage":{
+                        "title":"The extended message",
+                        "type":"string"
+                    }
+                }
+            },
+            "MyExtendedOuter":{
+                "title":"This is a simple data bean which is extedned from jar file.",
+                "properties":{
+                    "extendedMessage":{
+                        "title":"The extended message",
+                        "type":"string"
+                    }
+                }
+            },
+            "MyLocalDataBean":{
+                "title":"This is a simple data bean from jar file.",
+                "properties":{
+                    "attributes":{
+                        "title":"The simple attributes",
+                        "type":"object"
+                    },
+                    "message":{
+                        "title":"The simple message",
+                        "type":"string"
+                    }
+                },
+                "allOf":[
+                    {
+                        "$ref":"#/components/schemas/MyLocalDataBeanBase"
+                    }
+                ]
+            },
+            "MyLocalDataBeanBase":{
+                "title":"This is a data bean base."
+            }
+        }
+    }
+}
+```
 
 ## How to build?
 
