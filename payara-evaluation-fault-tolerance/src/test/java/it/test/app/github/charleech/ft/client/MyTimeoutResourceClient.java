@@ -1,4 +1,4 @@
-package it.test.app.github.charleech.openapi.client;
+package it.test.app.github.charleech.ft.client;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.Consumes;
@@ -6,6 +6,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
@@ -26,20 +27,24 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
  */
 @ApplicationScoped
 @RegisterRestClient
+@Path("/ft")
 @Consumes({
     MediaType.APPLICATION_JSON
 })
 @Produces({
     MediaType.APPLICATION_JSON
 })
-public interface MPRestClient {
+public interface MyTimeoutResourceClient {
 
     /**
-     * Get OpenAPI.
+     * The timeout resource.
      *
-     * @return The OpenAPI
+     * @return The response
+     * @throws InterruptedException
+     *             If there is any error
+     * @since 1.0.0
      */
     @GET
-    @Path("/openapi")
-    String getOpenAPI();
+    @Path("/timeout")
+    Response alwaysFail();
 }
