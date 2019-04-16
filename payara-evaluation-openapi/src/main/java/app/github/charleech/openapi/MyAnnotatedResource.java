@@ -20,7 +20,7 @@ import org.eclipse.microprofile.openapi.annotations.parameters.Parameter;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
 
-import app.github.charleech.base.bean.MyOuterBean;
+import app.github.charleech.base.bean.ref.MyAnnotatedDataBean;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -36,14 +36,14 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 @ApplicationScoped
-@Path("/ref/outer")
+@Path("/ref")
 @Consumes({
     MediaType.APPLICATION_JSON
 })
 @Produces({
     MediaType.APPLICATION_JSON
 })
-public class MyRefOuterResource implements Serializable {
+public class MyAnnotatedResource implements Serializable {
 
     /**
      * This is a default serial version {@code UID} as {@value}.
@@ -55,8 +55,8 @@ public class MyRefOuterResource implements Serializable {
     @GET
     @Path("/hello")
     @Operation(
-        summary     = "Simple hello with reference non-annotated data bean.",
-        description = "Simple hello with reference non-annotated data bean."
+        summary     = "Simple hello with reference data bean.",
+        description = "Simple hello with reference data bean."
     )
     @APIResponses(
         value = {
@@ -67,7 +67,7 @@ public class MyRefOuterResource implements Serializable {
                     @Content(
                         mediaType = "application/json",
                         schema    = @Schema(
-                            implementation = MyOuterBean.class
+                            implementation = MyAnnotatedDataBean.class
                         )
                     )
                 }
@@ -79,7 +79,7 @@ public class MyRefOuterResource implements Serializable {
                     @Content(
                         mediaType = "application/json",
                         schema    = @Schema(
-                            implementation = MyOuterBean.class
+                             implementation = MyAnnotatedDataBean.class
                         )
                     )
                 }

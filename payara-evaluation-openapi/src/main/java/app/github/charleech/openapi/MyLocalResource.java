@@ -20,7 +20,6 @@ import org.eclipse.microprofile.openapi.annotations.parameters.Parameter;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
 
-import app.github.charleech.openapi.bean.MyLocalDataBean;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -67,7 +66,7 @@ public class MyLocalResource implements Serializable {
                     @Content(
                         mediaType = "application/json",
                         schema    = @Schema(
-                            implementation = MyLocalDataBean.class
+                            ref =  "MyLocalDataBean"
                         )
                     )
                 }
@@ -79,7 +78,7 @@ public class MyLocalResource implements Serializable {
                     @Content(
                         mediaType = "application/json",
                         schema    = @Schema(
-                            implementation = MyLocalDataBean.class
+                            ref =  "MyLocalDataBean"
                         )
                     )
                 }
