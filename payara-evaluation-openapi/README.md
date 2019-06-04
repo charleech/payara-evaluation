@@ -1,5 +1,9 @@
 # The OpenAPI evaluation
 
+## Updated on June 4, 2019
+
+Both two issues still exists with **Payara-micro** version `5.192`.
+
 ## Design
 
 ### payara-evaluation-base
@@ -66,7 +70,7 @@ app.github.charleech.openapi.bean
                 }
             },
             "MyExtendedAnnotated":{
-                "title":"This is a simple data bean which is extedned from jar file.",
+                "title":"This is a simple data bean which is extended from jar file.",
                 "properties":{
                     "extendedMessage":{
                         "title":"The extended message",
@@ -80,7 +84,7 @@ app.github.charleech.openapi.bean
                 ]
             },
             "MyExtendedOuter":{
-                "title":"This is a simple data bean which is extedned from jar file.",
+                "title":"This is a simple data bean which is extended from jar file.",
                 "properties":{
                     "extendedMessage":{
                         "title":"The extended message",

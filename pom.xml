@@ -60,7 +60,7 @@
         <my.commons.lang.old.version>2.6</my.commons.lang.old.version>
 
         <my.payara.arquillian.version>1.0.Beta3</my.payara.arquillian.version>
-        <my.payara.version>5.191</my.payara.version>
+        <my.payara.version>5.192</my.payara.version>
 
         <my.json.unit.version>2.6.1</my.json.unit.version>
         <my.jsonassert.version>0.4.13</my.jsonassert.version>
