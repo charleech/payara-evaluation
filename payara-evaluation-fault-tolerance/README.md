@@ -1,5 +1,9 @@
 # The Fault Tolerance evaluation
 
+## Updated on June 4, 2019
+
+Both two issues below has been fixed with **Payara-micro** version `5.192`.
+
 ## How to build?
 
 * Build the parent

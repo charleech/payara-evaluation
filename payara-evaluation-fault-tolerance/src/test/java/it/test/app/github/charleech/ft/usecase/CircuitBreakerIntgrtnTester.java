@@ -86,7 +86,17 @@ public class CircuitBreakerIntgrtnTester {
                     this.bldr.produce(this.basicUrl.toString() + "api",
                                       MyCircuitBreakerResourceClient.class);
 
-            for (int i = 1; i <= 20; i++) {
+            /*
+             * src/main/resource/META-INF/microprofile-config.properties
+             * src/test/resource/META-INF/microprofile-config.properties
+             *
+             * app.github.charleech.ft.MyCircuitBreakerResource/alwaysFail/CircuitBreaker/requestVolumeThreshold=4
+             *
+             * then the loop count is 4 failure, next will be circuit breaker exception.
+             *
+             */
+
+            for (int i = 1; i <= 4; i++) {
 
                 th = Assertions.catchThrowable(() -> client.alwaysFail());
 
@@ -117,7 +127,7 @@ public class CircuitBreakerIntgrtnTester {
 
             BDDAssertions.then(ex.getResponse().readEntity(String.class)).
                           as("The root cause must be valid.").
-                          contains("CircuitBreaker for method alwaysFail is in state OPEN.");
+                          contains("org.eclipse.microprofile.faulttolerance.exceptions.CircuitBreakerOpenException");
 
         } finally {
             th = null;
