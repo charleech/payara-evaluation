@@ -36,36 +36,36 @@
         
         <my.java.version>1.8</my.java.version>
 
-        <my.lombok.version>1.18.6</my.lombok.version>
-        <my.spotbugs.version>3.1.12</my.spotbugs.version>  
-        <my.slf4j.version>1.7.26</my.slf4j.version>
+        <my.lombok.version>1.18.12</my.lombok.version>
+        <my.spotbugs.version>4.1.1</my.spotbugs.version>  
+        <my.slf4j.version>1.7.30</my.slf4j.version>
         <my.logback.version>1.2.3</my.logback.version>
         
         <my.junit.version>4.12</my.junit.version>
-        <my.mockito.version>2.27.0</my.mockito.version>
-        <my.assertj.version>3.12.2</my.assertj.version>
+        <my.mockito.version>3.2.4</my.mockito.version>
+        <my.assertj.version>3.14.0</my.assertj.version>
         <my.system.rules.version>1.19.0</my.system.rules.version>
-        <my.h2.version>1.4.199</my.h2.version>
+        <my.h2.version>1.4.200</my.h2.version>
         <my.fluent.interface.proxy.version>2.2.0</my.fluent.interface.proxy.version>
         
-        <my.jersey.version>2.27</my.jersey.version>
-        <my.eclipselink.version>2.7.3</my.eclipselink.version>
+        <my.jersey.version>2.31</my.jersey.version>
+        <my.eclipselink.version>2.7.6</my.eclipselink.version>
         <my.javaee.version>8.0</my.javaee.version>
-        <my.microprofile.version>2.1</my.microprofile.version>
+        <my.microprofile.version>3.3</my.microprofile.version>
         
-        <my.arquillian.version>1.4.1.Final</my.arquillian.version>
-        <my.shrinkwrap.resolver.version>3.1.3</my.shrinkwrap.resolver.version>
+        <my.arquillian.version>1.7.0.Alpha2</my.arquillian.version>
+        <my.shrinkwrap.resolver.version>3.1.4</my.shrinkwrap.resolver.version>
         <my.shrinkwrap.descriptor.version>2.0.0</my.shrinkwrap.descriptor.version>
-        <my.ingwar.suite.version>1.2.0</my.ingwar.suite.version>
+        <my.ingwar.suite.version>1.2.1</my.ingwar.suite.version>
         <my.commons.lang.old.version>2.6</my.commons.lang.old.version>
 
-        <my.payara.arquillian.version>1.0.Beta3</my.payara.arquillian.version>
-        <my.payara.version>5.192</my.payara.version>
+        <my.payara.arquillian.version>2.3.1</my.payara.arquillian.version>
+        <my.payara.version>5.2020.3</my.payara.version>
 
-        <my.json.unit.version>2.6.1</my.json.unit.version>
-        <my.jsonassert.version>0.4.13</my.jsonassert.version>
+        <my.json.unit.version>2.18.1</my.json.unit.version>
+        <my.jsonassert.version>0.4.14</my.jsonassert.version>
         <my.restito.version>0.9.3</my.restito.version>
-        <my.rest.assured.version>3.3.0</my.rest.assured.version>
+        <my.rest.assured.version>4.1.2</my.rest.assured.version>
         <my.groovy.version>2.4.15</my.groovy.version>
     </properties>
 
@@ -75,9 +75,24 @@
 
     <repositories>
         <repository>
-            <id>central</id>
-            <name>central</name>
-            <url>http://repo1.maven.org/maven2/</url>
+            <id>maven-central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>bintray</id>
+            <url>https://jcenter.bintray.com</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
         </repository>
     </repositories>
 
@@ -286,7 +301,7 @@
     
             <dependency>
                 <groupId>fish.payara.arquillian</groupId>
-                <artifactId>arquillian-payara-micro-5-managed</artifactId>
+                <artifactId>arquillian-payara-micro-managed</artifactId>
                 <version>${my.payara.arquillian.version}</version>
             </dependency>
             <dependency>
@@ -371,18 +386,18 @@
             <properties>
                 <my.maven.clean.version>3.1.0</my.maven.clean.version>
                 <my.maven.scm.version>1.11.1</my.maven.scm.version>
-                <my.maven.compiler.version>3.8.0</my.maven.compiler.version>
+                <my.maven.compiler.version>3.8.1</my.maven.compiler.version>
                 <my.maven.resources.version>3.1.0</my.maven.resources.version>
                 <my.maven.surefire.version>2.22.1</my.maven.surefire.version>
-                <my.maven.surefire.junit.version>2.22.1</my.maven.surefire.junit.version>
-                <my.maven.failsafe.version>2.22.1</my.maven.failsafe.version>
-                <my.maven.jar.version>3.1.1</my.maven.jar.version>
-                <my.maven.war.version>3.2.2</my.maven.war.version>
-                <my.maven.dependency.verion>3.1.1</my.maven.dependency.verion>
+                <my.maven.surefire.junit.version>2.22.2</my.maven.surefire.junit.version>
+                <my.maven.failsafe.version>2.22.2</my.maven.failsafe.version>
+                <my.maven.jar.version>3.2.0</my.maven.jar.version>
+                <my.maven.war.version>3.3.1</my.maven.war.version>
+                <my.maven.dependency.verion>3.1.2</my.maven.dependency.verion>
                 <my.maven.deploy.version>2.8.2</my.maven.deploy.version>
-                <my.maven.checkstyle.version>3.0.0</my.maven.checkstyle.version>
-                <my.maven.pmd.version>3.11.0</my.maven.pmd.version>
-                <my.spotbug.maven.version>3.1.11</my.spotbug.maven.version>
+                <my.maven.checkstyle.version>3.1.1</my.maven.checkstyle.version>
+                <my.maven.pmd.version>3.13.0</my.maven.pmd.version>
+                <my.spotbug.maven.version>4.0.1</my.spotbug.maven.version>
             </properties>
             <build>
                 <pluginManagement>
@@ -868,7 +883,7 @@
             <dependencies>
                 <dependency>
                     <groupId>fish.payara.arquillian</groupId>
-                    <artifactId>arquillian-payara-micro-5-managed</artifactId>
+                    <artifactId>arquillian-payara-micro-managed</artifactId>
                     <scope>${my.project.dependency.test.scope}</scope>
                 </dependency>
             </dependencies>
