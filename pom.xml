@@ -41,7 +41,7 @@
         <my.slf4j.version>1.7.30</my.slf4j.version>
         <my.logback.version>1.2.3</my.logback.version>
         
-        <my.junit.version>4.12</my.junit.version>
+        <my.junit.version>4.13.1</my.junit.version>
         <my.mockito.version>3.2.4</my.mockito.version>
         <my.assertj.version>3.14.0</my.assertj.version>
         <my.system.rules.version>1.19.0</my.system.rules.version>
@@ -60,7 +60,7 @@
         <my.commons.lang.old.version>2.6</my.commons.lang.old.version>
 
         <my.payara.arquillian.version>2.3.1</my.payara.arquillian.version>
-        <my.payara.version>5.2020.3</my.payara.version>
+        <my.payara.version>5.2020.5</my.payara.version>
 
         <my.json.unit.version>2.18.1</my.json.unit.version>
         <my.jsonassert.version>0.4.14</my.jsonassert.version>
