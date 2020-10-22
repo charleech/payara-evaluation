@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  payara:
+    image: payara/micro:latest
+    environment:
+      - TZ=Asia/Bangkok
+      - JDBC_URL=jdbc\:h2\:mem\:testdb
+      - JDBC_USER=testuser
+      - JDBC_PASSOWRD=testuser
+      - JDBC_DATASOURCE_CLASSNAME=org.h2.jdbcx.JdbcDataSource
+      - JDBC_JNDI_NAME=jdbc/testdb
+      - JDBC_POOL_NAME=test-db-pool
+      - JDBC_POOL_MIN=1
+      - JDBC_POOL_MAX=10
+    volumes:
+      - ./boot-scripts:/opt/payara/resources/boot-scripts
+    command:
+      - --prebootcommandfile
+      - '/opt/payara/resources/boot-scripts/pre-boot.txt'
+      - --postbootcommandfile
+      - '/opt/payara/resources/boot-scripts/post-boot.txt'
