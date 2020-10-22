@@ -13,6 +13,7 @@ services:
       - JDBC_POOL_NAME=test-db-pool
       - JDBC_POOL_MIN=1
       - JDBC_POOL_MAX=10
+      - JDBC_VALIDATION_CLASSNAME=org.glassfish.api.jdbc.validation.H2ConnectionValidation
     volumes:
       - ./boot-scripts:/opt/payara/resources/boot-scripts
     command:

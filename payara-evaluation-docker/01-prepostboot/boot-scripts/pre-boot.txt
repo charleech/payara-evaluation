@@ -6,7 +6,7 @@ set resources.jdbc-connection-pool.${ENV=JDBC_POOL_NAME}.max-pool-size=${ENV=JDB
 
 set resources.jdbc-connection-pool.${ENV=JDBC_POOL_NAME}.connection-validation-method=custom-validation
 
-set resources.jdbc-connection-pool.${ENV=JDBC_POOL_NAME}.validation-classname=org.glassfish.api.jdbc.validation.H2ConnectionValidation
+set resources.jdbc-connection-pool.${ENV=JDBC_POOL_NAME}.validation-classname=${ENV=JDBC_VALIDATION_CLASSNAME}
 
 set resources.jdbc-connection-pool.${ENV=JDBC_POOL_NAME}.is-connection-validation-required=true
 
