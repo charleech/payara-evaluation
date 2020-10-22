@@ -1,0 +1,19 @@
+create-jdbc-connection-pool --datasourceclassname ${ENV=JDBC_DATASOURCE_CLASSNAME} --restype javax.sql.XADataSource --property url=${ENV=JDBC_URL}:user=${ENV=JDBC_USER}:password=${ENV=JDBC_PASSWORD} ${ENV=JDBC_POOL_NAME}
+
+set resources.jdbc-connection-pool.${ENV=JDBC_POOL_NAME}.steady-pool-size=${ENV=JDBC_POOL_MIN}
+
+set resources.jdbc-connection-pool.${ENV=JDBC_POOL_NAME}.max-pool-size=${ENV=JDBC_POOL_MAX}
+
+set resources.jdbc-connection-pool.${ENV=JDBC_POOL_NAME}.connection-validation-method=custom-validation
+
+set resources.jdbc-connection-pool.${ENV=JDBC_POOL_NAME}.validation-classname=org.glassfish.api.jdbc.validation.H2ConnectionValidation
+
+set resources.jdbc-connection-pool.${ENV=JDBC_POOL_NAME}.is-connection-validation-required=true
+
+set resources.jdbc-connection-pool.${ENV=JDBC_POOL_NAME}.fail-all-connections=true
+
+set resources.jdbc-connection-pool.${ENV=JDBC_POOL_NAME}.statement-leak-timeout-in-seconds=5
+
+set resources.jdbc-connection-pool.${ENV=JDBC_POOL_NAME}.connection-leak-timeout-in-seconds=5
+
+create-jdbc-resource --connectionpoolid ${ENV=JDBC_POOL_NAME} ${ENV=JDBC_JNDI_NAME}

@@ -1,0 +1,5 @@
+list-jdbc-connection-pools
+
+list-jdbc-resources
+
+ping-connection-pool ${ENV=JDBC_POOL_NAME}
