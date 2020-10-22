@@ -41,7 +41,7 @@
         <my.slf4j.version>1.7.30</my.slf4j.version>
         <my.logback.version>1.2.3</my.logback.version>
         
-        <my.junit.version>4.12</my.junit.version>
+        <my.junit.version>4.13.1</my.junit.version>
         <my.mockito.version>3.2.4</my.mockito.version>
         <my.assertj.version>3.14.0</my.assertj.version>
         <my.system.rules.version>1.19.0</my.system.rules.version>
