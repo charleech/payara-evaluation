@@ -7,7 +7,7 @@ services:
       - TZ=Asia/Bangkok
       - JDBC_URL=jdbc\:h2\:mem\:testdb
       - JDBC_USER=testuser
-      - JDBC_PASSOWRD=testuser
+      - JDBC_PASSWORD=testuser
       - JDBC_DATASOURCE_CLASSNAME=org.h2.jdbcx.JdbcDataSource
       - JDBC_JNDI_NAME=jdbc/testdb
       - JDBC_POOL_NAME=test-db-pool
