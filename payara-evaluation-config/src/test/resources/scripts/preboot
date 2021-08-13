@@ -1,0 +1,5 @@
+set-config-cache --duration=0
+
+get-config-ordinal --source=cloud
+set-config-ordinal --ordinal=500 --source=cloud
+get-config-ordinal --source=cloud

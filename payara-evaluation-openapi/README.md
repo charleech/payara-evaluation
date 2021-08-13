@@ -1,8 +1,14 @@
 # The OpenAPI evaluation
 
+## Update on August 13, 2021
+
+Test with **Payara** _Micro_ version `5.2021.4`, the result looks good.
+
+Anyhow I have no time to drill-down in detail.
+
 ## Updated on June 4, 2019
 
-Both two issues still exists with **Payara-micro** version `5.192`.
+Both two issues still exists with **Payara** _Micro_ version `5.192`.
 
 ## Design
 
@@ -370,7 +376,7 @@ cd payara-evaluation/payara-evaluation-openapi/target
 # Start the application
 # 
 
-java -jar payara-micro-5.2020.3.jar \
+java -jar payara-micro-5.2021.4.jar \
 --deploy payara-evaluation-openapi-1.0.0-SNAPSHOT.war \
 --contextroot / \
 --addLibs ./libs

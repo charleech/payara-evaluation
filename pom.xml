@@ -29,7 +29,7 @@
         <my.project.dependency.import.scope>import</my.project.dependency.import.scope>
         <my.project.dependency.web.scope>compile</my.project.dependency.web.scope>
         
-        <my.maven.surefire.jvm.memory>-Xmx512m -XX:MaxPermSize=256m -XX:-UseSplitVerifier</my.maven.surefire.jvm.memory>
+        <my.maven.surefire.jvm.memory>-Xmx512m</my.maven.surefire.jvm.memory>
         <my.maven.surefire.java.endorsed.dir/>
         
         <my.project.quality.exclude/>
@@ -51,7 +51,7 @@
         <my.jersey.version>2.31</my.jersey.version>
         <my.eclipselink.version>2.7.6</my.eclipselink.version>
         <my.javaee.version>8.0</my.javaee.version>
-        <my.microprofile.version>3.3</my.microprofile.version>
+        <my.microprofile.version>4.0.1</my.microprofile.version>
         
         <my.arquillian.version>1.7.0.Alpha2</my.arquillian.version>
         <my.shrinkwrap.resolver.version>3.1.4</my.shrinkwrap.resolver.version>
@@ -60,7 +60,7 @@
         <my.commons.lang.old.version>2.6</my.commons.lang.old.version>
 
         <my.payara.arquillian.version>2.3.1</my.payara.arquillian.version>
-        <my.payara.version>5.2020.5</my.payara.version>
+        <my.payara.version>5.2021.4</my.payara.version>
 
         <my.json.unit.version>2.18.1</my.json.unit.version>
         <my.jsonassert.version>0.4.14</my.jsonassert.version>
