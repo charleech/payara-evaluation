@@ -7,7 +7,9 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 
+import org.eclipse.microprofile.config.ConfigProvider;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
+import org.eclipse.microprofile.config.spi.ConfigSource;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -59,6 +61,44 @@ public class MyConfigResource {
      */
     @GET
     public Response getConfig() {
+        return Response.ok().entity(this.getAllConfigSources()).build();
+    }
+
+    /**
+     * Get all config from all config source.
+     *
+     * @since 1.0.0
+     * @return
+     */
+    protected String getAllConfigSources() {
+        StringBuilder bldr = null;
+        try {
+            bldr = new StringBuilder();
+
+            for (final ConfigSource cs : ConfigProvider.getConfig().
+                                                  getConfigSources()) {
+                bldr.append("configName=").
+                     append(cs.getName()).
+                     append(", ").
+                     append("configOrdinal=").
+                     append(cs.getOrdinal()).
+                     append("\r\n");
+            }
+
+            return bldr.toString();
+
+        } finally {
+            bldr = null;
+        }
+    }
+
+    /**
+     * Refresh config.
+     *
+     * @return The result
+     * @since 1.0.0
+     */
+    protected String refreshConfig() {
         String value1 = null;
         String value2 = null;
         String value3 = null;
@@ -76,7 +116,7 @@ public class MyConfigResource {
                          append("value3=").append(value3).
                          toString();
 
-            return Response.ok().entity(entity).build();
+            return entity;
 
         } finally {
             value1 = null;
