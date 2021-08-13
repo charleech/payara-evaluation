@@ -83,6 +83,17 @@ public class MyConfigResource {
                      append("configOrdinal=").
                      append(cs.getOrdinal()).
                      append("\r\n");
+
+
+//                bldr.append(">>>>\r\n");
+//                for (final Map.Entry<String, String> entry
+//                        : cs.getProperties().entrySet()) {
+//                    bldr.append(entry.getKey()).
+//                         append("=").
+//                         append(entry.getValue()).
+//                         append("\r\n");
+//                }
+//                bldr.append("<<<<\r\n");
             }
 
             return bldr.toString();
