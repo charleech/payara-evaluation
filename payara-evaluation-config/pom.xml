@@ -36,6 +36,14 @@
                                     <directory>${project.basedir}/src/test/resources/scripts</directory>
                                     <filtering>false</filtering>
                                     <includes>
+                                        <include>**/postboot</include>
+                                        <include>**/vault_password</include>
+                                    </includes>
+                                </resource>
+                                <resource>
+                                    <directory>${project.basedir}/src/test/resources/scripts</directory>
+                                    <filtering>true</filtering>
+                                    <includes>
                                         <include>**/preboot</include>
                                     </includes>
                                 </resource>

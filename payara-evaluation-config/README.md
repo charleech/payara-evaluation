@@ -21,6 +21,31 @@ mvn clean install -Dpayara-micro=true
 
 ```
 
+* Start **Vault**
+
+```
+vault server -dev
+
+#
+# In development mode it will print root token and unseal key
+#
+```
+
+
+```
+# For *nix
+export VAULT_ADDR='http://127.0.0.1:8200'
+export VAULT_TOKEN="s.????"
+
+# For Windows
+set VAULT_ADDR=http://127.0.0.1:8200
+set VAULT_TOKEN=s.????
+
+vault kv put secret/hello foo=world excited=yes
+```
+
+* Copy Vault Token to `src/test/resources/scripts/vault_password`
+
 * Build this project
 
 
@@ -37,6 +62,8 @@ mvn clean install -Dmaven.test.skip=true -Dpayara-micro=true
 mvn clean install -Dpayara-micro=true
 
 ```
+
+
 
 * Execute via the **Payara-Micro**
 
@@ -64,7 +91,8 @@ java -jar payara-micro-5.2021.4.jar \
 --deploy payara-evaluation-config-1.0.0-SNAPSHOT.war \
 --contextroot / \
 --addLibs ./libs \
---prebootcommandfile ./preboot
+--prebootcommandfile ./preboot \
+--postbootcommandfile ./postboot
 
 # Example Output
 
