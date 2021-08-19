@@ -1,10 +1,17 @@
 set-config-cache --duration=0
 
-get-config-ordinal --source=cloud
-set-config-ordinal --ordinal=500 --source=cloud
-get-config-ordinal --source=cloud
+# domain,config,server,application,module,cluster,jndi,secrets,password,
+# jdbc,cloud,ldap
 
-
-delete-password-alias --interactive=false HASHICORP_VAULT_TOKEN
-create-password-alias --interactive=false --passwordfile ${project.build.directory}/vault_password HASHICORP_VAULT_TOKEN
-list-password-aliases
+set-config-ordinal --ordinal=999 --source=domain
+set-config-ordinal --ordinal=998 --source=config
+set-config-ordinal --ordinal=997 --source=server
+set-config-ordinal --ordinal=996 --source=application
+set-config-ordinal --ordinal=995 --source=module
+set-config-ordinal --ordinal=994 --source=cluster
+set-config-ordinal --ordinal=993 --source=jndi
+set-config-ordinal --ordinal=992 --source=secrets
+set-config-ordinal --ordinal=991 --source=password
+set-config-ordinal --ordinal=990 --source=jdbc
+set-config-ordinal --ordinal=989 --source=cloud
+set-config-ordinal --ordinal=987 --source=ldap

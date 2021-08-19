@@ -21,6 +21,33 @@ mvn clean install -Dpayara-micro=true
 
 ```
 
+* Start **Vault**
+
+```
+vault server -dev
+
+#
+# In development mode it will print root token and unseal key
+#
+```
+
+
+```
+# For *nix
+export VAULT_ADDR='http://127.0.0.1:8200'
+export VAULT_TOKEN="s.????"
+
+# For Windows
+set VAULT_ADDR=http://127.0.0.1:8200
+set VAULT_TOKEN=s.????
+
+vault kv put secret/hello foo=world excited=yes
+```
+
+* Copy Vault Token to `src/test/resources/scripts/vault_password`
+
+* Build this project
+
 
 ```bash
 cd payara-evaluation/payara-evaluation-config
@@ -46,18 +73,9 @@ mvn clean install -Dpayara-micro=true
 #
 set-config-cache --duration=0
 
-set-config-ordinal --ordinal=999 --source=domain
-set-config-ordinal --ordinal=998 --source=config
-set-config-ordinal --ordinal=997 --source=server
-set-config-ordinal --ordinal=996 --source=application
-set-config-ordinal --ordinal=995 --source=module
-set-config-ordinal --ordinal=994 --source=cluster
-set-config-ordinal --ordinal=993 --source=jndi
-set-config-ordinal --ordinal=992 --source=secrets
-set-config-ordinal --ordinal=991 --source=password
-set-config-ordinal --ordinal=990 --source=jdbc
-set-config-ordinal --ordinal=989 --source=cloud
-set-config-ordinal --ordinal=987 --source=ldap
+get-config-ordinal --source=cloud
+set-config-ordinal --ordinal=500 --source=cloud
+get-config-ordinal --source=cloud
 ```
 
 
@@ -109,25 +127,25 @@ http://localhost:8080/api/config
 < X-Frame-Options: SAMEORIGIN
 <
 configName=Payara, configOrdinal=1000
-configName=Domain, configOrdinal=999
-configName=ServerConfig, configOrdinal=998
-configName=Server, configOrdinal=997
-configName=Application, configOrdinal=996
-configName=Module, configOrdinal=995
-configName=Cluster, configOrdinal=994
-configName=Directory, configOrdinal=992
-configName=Password Alias, configOrdinal=991
-configName=JDBC, configOrdinal=990
 configName=SystemProperty, configOrdinal=400
 configName=Environment, configOrdinal=300
-configName=JNDI, configOrdinal=115 # <----- expected 993
+configName=JDBC, configOrdinal=190
+configName=Cluster, configOrdinal=160
+configName=Module, configOrdinal=150
+configName=Application, configOrdinal=140
+configName=Server, configOrdinal=130
+configName=ServerConfig, configOrdinal=120
+configName=JNDI, configOrdinal=115
+configName=Domain, configOrdinal=110
+configName=Password Alias, configOrdinal=105
 configName=Properties, configOrdinal=100
-configName=aws, configOrdinal=100 # <----- expected 989
-configName=azure, configOrdinal=100 # <----- expected 989
-configName=dynamodb, configOrdinal=100 # <----- expected 989
-configName=gcp, configOrdinal=100 # <----- expected 989
-configName=hashicorp, configOrdinal=100 # <----- expected 989
-configName=ldap, configOrdinal=100 # <----- expected 987
+configName=aws, configOrdinal=100
+configName=azure, configOrdinal=100
+configName=dynamodb, configOrdinal=100
+configName=gcp, configOrdinal=100
+configName=hashicorp, configOrdinal=100
+configName=ldap, configOrdinal=100
+configName=Directory, configOrdinal=90
 
 
 ```

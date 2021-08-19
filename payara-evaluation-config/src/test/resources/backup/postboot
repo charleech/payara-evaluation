@@ -1,0 +1,1 @@
+# set-hashicorp-config-source-configuration --enabled true --dynamic true --api-version 2 --vault-address http://127.0.0.1:8200 --secrets-engine-path secret --secrets-path hello
