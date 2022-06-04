@@ -59,8 +59,8 @@
         <my.ingwar.suite.version>1.2.1</my.ingwar.suite.version>
         <my.commons.lang.old.version>2.6</my.commons.lang.old.version>
 
-        <my.payara.arquillian.version>2.3.1</my.payara.arquillian.version>
-        <my.payara.version>5.2021.4</my.payara.version>
+        <my.payara.arquillian.version>2.4.6</my.payara.arquillian.version>
+        <my.payara.version>5.2022.2</my.payara.version>
 
         <my.json.unit.version>2.18.1</my.json.unit.version>
         <my.jsonassert.version>0.4.14</my.jsonassert.version>

@@ -92,7 +92,7 @@ cd payara-evaluation/payara-evaluation-fault-tolerance/target
 # Start the application
 # 
 
-java -jar payara-micro-5.2021.4.jar \
+java -jar payara-micro-5.2022.2.jar \
 --deploy payara-evaluation-fault-tolerance-1.0.0-SNAPSHOT.war \
 --contextroot / \
 --addLibs ./libs

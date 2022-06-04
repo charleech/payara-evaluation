@@ -376,7 +376,7 @@ cd payara-evaluation/payara-evaluation-openapi/target
 # Start the application
 # 
 
-java -jar payara-micro-5.2021.4.jar \
+java -jar payara-micro-5.2022.2.jar \
 --deploy payara-evaluation-openapi-1.0.0-SNAPSHOT.war \
 --contextroot / \
 --addLibs ./libs
