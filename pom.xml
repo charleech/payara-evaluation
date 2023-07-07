@@ -45,7 +45,7 @@
         <my.mockito.version>3.2.4</my.mockito.version>
         <my.assertj.version>3.14.0</my.assertj.version>
         <my.system.rules.version>1.19.0</my.system.rules.version>
-        <my.h2.version>1.4.200</my.h2.version>
+        <my.h2.version>2.2.220</my.h2.version>
         <my.fluent.interface.proxy.version>2.2.0</my.fluent.interface.proxy.version>
         
         <my.jersey.version>2.31</my.jersey.version>
